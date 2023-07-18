@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вывести простые числа</title>
+</head>
+<body>
+  <script>
+    let str = '';
+    let n = prompt('До какого числа найти все простые числа?');
+
+    for (let i = 2; i < n; i++) {
+      for (let j = 2; j <= i; j++) {
+        if (j == i) {
+          str += i + ',';
+        }
+        if (i % j == 0) break;
+      }
+    }
+    alert(str);
+
+    // nextPrime:
+    // for (let i = 2; i <= n; i++) { // Для всех i...
+
+    //   for (let j = 2; j < i; j++) { // проверить, делится ли число..
+    //     if (i % j == 0) continue nextPrime; // не подходит, берём следующее
+    //   }
+
+    //   alert( i ); // простое число
+    // }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Повторять цикл, пока ввод неверен</title>
+</head>
+<body>
+  <script>
+    let number = 0;
+    while ((number < 100) && number !== null) {
+      number = prompt('Введите число больше 100');
+    }
+    alert('Вы ввели число больше 100 или нажали Esc');
+
+    // let num;
+
+    // do {
+    //   num = prompt("Введите число больше 100?", 0);
+    // } while (num <= 100 && num);
+  </script>
+</body>
+</html>
