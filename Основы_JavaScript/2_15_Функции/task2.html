@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Перепишите функцию, используя оператор '?' или '||'</title>
+</head>
+<body>
+  <script>
+    function checkAge(age) {
+      return (age > 18) ? true : confirm('Родители разрешили?');
+    }
+    alert(checkAge(20));
+    checkAge(16);
+    function checkAge2(age) {
+      return (age > 18) || confirm('Родители разрешили?');
+    }
+    alert(checkAge(20));
+    checkAge(16);
+  </script>
+</body>
+</html>
