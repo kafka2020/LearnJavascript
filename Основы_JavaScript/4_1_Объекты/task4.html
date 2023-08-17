@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сумма свойств объекта</title>
+</head>
+<body>
+  <script>
+    function multiplyNumeric(obj) {
+      for (let prop in obj) {
+        if (typeof obj[prop] === "number") {
+          obj[prop] *= 2;
+        } 
+      }
+    }
+
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "My menu"
+    };
+
+    for (let key in menu) {
+    alert( menu[key] );
+    }
+
+    multiplyNumeric(menu);
+
+    for (let key in menu) {
+    alert( menu[key] );
+    }
+  </script>
+</body>
+</html>

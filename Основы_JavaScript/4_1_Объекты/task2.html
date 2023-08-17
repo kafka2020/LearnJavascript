@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function isEmpty(obj) {
+      for (let key in obj) {
+        return false
+      }
+      return true
+    }
+    let obj_1 = {}
+    let obj_2 = {
+      name: 25,
+      isBoy: false,
+    }
+    let obj_3 = {
+      x: 40,
+    }
+    // alert(isEmpty(obj_1))
+    // alert(isEmpty(obj_2))
+    // alert(isEmpty(obj_3))
+    
+    let schedule = {};
+
+    alert( isEmpty(schedule) ); // true
+
+    schedule["8:30"] = "get up";
+
+    alert( isEmpty(schedule) ); // false
+  </script>
+</body>
+</html>
