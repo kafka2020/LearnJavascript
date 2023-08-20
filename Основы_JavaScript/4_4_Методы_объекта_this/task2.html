@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Использование "this" в литерале объекта</title>
+</head>
+<body>
+  <script>
+    let calculator = {
+      read() {
+        this.term_1 = +(prompt('a?', 0))
+        this.term_2 = +(prompt('b?', 0))
+      },
+      sum() {
+        return (this.term_1 + this.term_2)
+      },
+      mul() {
+        return (this.term_1 * this.term_2)
+      }
+    };
+
+    calculator.read();
+    alert( calculator.sum() );
+    alert( calculator.mul() );
+  </script>
+</body>
+</html>
