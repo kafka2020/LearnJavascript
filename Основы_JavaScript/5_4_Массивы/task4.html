@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сумма введённых чисел</title>
+</head>
+<body>
+  <script>
+    function sumInput() {
+      let num = 0
+      let arr = []
+
+      do {
+        arr.push(+num)
+        num = prompt('Введите число', 0)
+      } while (!(num === null || num === '' || isNaN(num)))
+      
+      let sum = 0
+      for (let value of arr) {
+        sum += value
+      }
+      return sum
+    }
+    let a = sumInput()
+    alert(`Сумма: ${a}`)
+  </script>
+</body>
+</html>

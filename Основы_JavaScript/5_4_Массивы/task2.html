@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Операции с массивами</title>
+</head>
+<body>
+  <script>
+    function changeMiddle(arr, change) {
+      let halfArr = []
+      let mid = Math.floor(arr.length / 2)
+      for (let i = arr.length - 1; i>=mid; i--) {
+        halfArr.unshift(arr.pop())
+      }
+      halfArr.shift()
+      arr.push(change)
+      return [].concat(arr, halfArr)
+    }
+    let styles = ["Джаз", "Блюз"]
+    alert(styles)
+    styles.push("Рок-н-ролл")
+    alert(styles)
+
+    styles = changeMiddle(styles, 'Классика')
+    alert(styles)
+
+    alert(styles.shift())
+    alert(styles)
+
+    styles.unshift("Рэп", "Регги")
+    alert(styles)
+
+    
+    let abc = ['zero', 'one', 'two', 'three', 'four']
+    alert(abc)
+    abc = changeMiddle(abc, 'add')
+    alert(abc)
+
+    let num = ['1', '2', '3', '4', '5', '6']
+    alert(num)
+    alert(Math.floor(num.length / 2))
+    num = changeMiddle(num, 'add')
+    alert(num)
+
+    // let styles = ["Джаз", "Блюз"];
+    // styles.push("Рок-н-ролл");
+    // styles[Math.floor((styles.length - 1) / 2)] = "Классика";
+    // alert( styles.shift() );
+    // styles.unshift("Рэп", "Регги");
+
+  </script>
+</body>
+</html>

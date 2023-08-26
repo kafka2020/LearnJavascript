@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подмассив наибольшей суммы</title>
+</head>
+<body>
+  <script>
+    function getMaxSubSum(arr) {
+      // Если все элементы массива не больше нуля, то функция возвращает ноль и дальше не выполняется
+      for (let i = 0; i < arr.length; i++) {
+        if (arr.at(i) > 0) {
+          break
+        }
+        if ((i == arr.length-1) && (arr[arr.length-1] < 0)) {
+          alert('Закончил без прогона')
+          return 0;
+        }
+      }
+      
+      let result = []
+
+      for (let i = 0; i < arr.length; i++) {
+
+        for (let j = arr.length-1; j >= i; j--) {
+
+          let sum = 0
+
+          for (let k = i; k <= j ; k++) {
+            sum += arr[k]
+          }
+          result.push(sum)
+        }    
+      }
+      // return result.sort((a, b) => b - a )[0] < 0 ? 0 : result.sort((a, b) => b - a )[0]  // Самое простое решение
+      return result.sort((a, b) => b - a )[0]
+    }
+
+    alert(getMaxSubSum([-1, 2, 3, -9]))          // 5
+    alert(getMaxSubSum([2, -1, 2, 3, -9]))       // 6
+    alert(getMaxSubSum([-1, 2, 3, -9, 11]))      // 11
+    alert(getMaxSubSum([-2, -1, 1, 2]))          // 3
+    alert(getMaxSubSum([100, -9, 2, -3, 5]))     // 100
+    alert(getMaxSubSum([1, 2, 3]))               // 6
+    alert(getMaxSubSum([-1, -2, -3]))            // 0
+
+    alert( getMaxSubSum([100, -9, 10, -3, 5]) ); // 103
+  </script>
+</body>
+</html>
